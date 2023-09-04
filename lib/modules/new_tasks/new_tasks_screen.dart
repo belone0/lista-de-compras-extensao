@@ -41,7 +41,7 @@ class NewTasksScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 18),
                     child: tasks.length > 0
                         ? Text(
-                            'Novos Itens',
+                            'Arraste o item para os lados para ver mais opcões',
                             style: TextStyle(
                               color: Colors.amber.shade700,
                               fontSize: 13,
@@ -57,6 +57,7 @@ class NewTasksScreen extends StatelessWidget {
                       ? ListView.builder(
                           //scrollDirection: Axis.vertical,
                           shrinkWrap: true,
+                          // padding: EdgeInsets.symmetric(horizontal: 10),
                           physics: NeverScrollableScrollPhysics(),
                           itemBuilder: (context, index) {
                             //print(index);
