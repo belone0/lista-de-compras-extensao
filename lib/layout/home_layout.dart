@@ -34,16 +34,10 @@ class HomeLayout extends StatelessWidget {
                   if (cubit.isBottomSheetShown) {
                     if (formKey.currentState!.validate()) {
                       cubit
-                          .inserToDatabase(
-                              title: titleController.text,
-                              time: timeController.text,
-                              date: dateController.text)
+                          .inserToDatabase(title: titleController.text)
                           .then((value) {
                         Navigator.pop(context);
                         titleController.clear();
-                        timeController.clear();
-                        dateController.clear();
-
                         cubit.changeBottomSheetState(
                             false,
                             Icon(
@@ -81,7 +75,7 @@ class HomeLayout extends StatelessWidget {
                                                 Navigator.pop(context);
                                               },
                                               child: Text(
-                                                'Cancel',
+                                                'Cancelar',
                                                 style: TextStyle(
                                                     color:
                                                         Colors.amber.shade700,
@@ -94,7 +88,7 @@ class HomeLayout extends StatelessWidget {
                                               width: 105,
                                             ),
                                             Text(
-                                              'Add Task',
+                                              'Adicionar Item',
                                               style: TextStyle(
                                                   color: Colors.white,
                                                   fontSize: 16,
@@ -132,83 +126,18 @@ class HomeLayout extends StatelessWidget {
                                                 ),
                                                 DefaultFormField(
                                                   controller: titleController,
-                                                  label: 'New Task',
+                                                  label: 'Novo Item',
                                                   type: TextInputType.text,
                                                   validate: (String? value) {
                                                     if (value!.isEmpty) {
-                                                      return 'Title must not be empty';
+                                                      return 'O titulo não pode estar vazio';
                                                     }
                                                     return null;
                                                   },
                                                   prefix: Icons.title,
                                                 ),
                                                 SizedBox(
-                                                  height: 10,
-                                                ),
-                                                DefaultFormField(
-                                                    onTap: () {
-                                                      showTimePicker(
-                                                              context: context,
-                                                              initialTime:
-                                                                  TimeOfDay
-                                                                      .now())
-                                                          .then((value) =>
-                                                              timeController
-                                                                      .text =
-                                                                  value!.format(
-                                                                      context));
-                                                    },
-                                                    controller: timeController,
-                                                    label: 'Task Time',
-                                                    type:
-                                                        TextInputType.datetime,
-                                                    validate: (String? value) {
-                                                      if (value!.isEmpty) {
-                                                        return 'Time must not be empty';
-                                                      }
-                                                      return null;
-                                                    },
-                                                    prefix: Icons
-                                                        .watch_later_outlined),
-                                                SizedBox(
-                                                  height: 10,
-                                                ),
-                                                DefaultFormField(
-                                                    onTap: () {
-                                                      print('Tapped');
-                                                      showDatePicker(
-                                                              context: context,
-                                                              initialDate:
-                                                                  DateTime
-                                                                      .now(),
-                                                              firstDate:
-                                                                  DateTime
-                                                                      .now(),
-                                                              lastDate: DateTime
-                                                                  .parse(
-                                                                      '2021-10-03'))
-                                                          .then((value) =>
-                                                              dateController
-                                                                  .text = DateFormat
-                                                                      .yMMMd()
-                                                                  .format(
-                                                                      value!));
-                                                    },
-                                                    controller: dateController,
-                                                    label: 'Task Deadline',
-                                                    type:
-                                                        TextInputType.datetime,
-                                                    validate: (String? value) {
-                                                      if (value!.isEmpty) {
-                                                        return 'Date must not be empty';
-                                                      }
-
-                                                      return null;
-                                                    },
-                                                    prefix:
-                                                        Icons.calendar_today),
-                                                SizedBox(
-                                                  height: 320,
+                                                  height: 220,
                                                 ),
                                               ],
                                             ),
@@ -250,7 +179,7 @@ class HomeLayout extends StatelessWidget {
                     type: BottomNavigationBarType.fixed,
                     items: [
                       BottomNavigationBarItem(
-                          icon: Icon(Icons.menu), label: 'Tasks'),
+                          icon: Icon(Icons.menu), label: 'Itens'),
                       BottomNavigationBarItem(
                           icon: Icon(Icons.check_circle_outline),
                           label: 'Done'),

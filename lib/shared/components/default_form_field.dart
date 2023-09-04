@@ -54,7 +54,7 @@ class DefaultFormField extends StatelessWidget {
             ),
             filled: true,
             fillColor: Colors.white10,
-            hintText: 'New Task',
+            hintText: 'Novo Item',
             hintStyle: TextStyle(color: Colors.grey),
             contentPadding: EdgeInsets.only(top: 10, bottom: 10, left: 20),
             enabledBorder: OutlineInputBorder(

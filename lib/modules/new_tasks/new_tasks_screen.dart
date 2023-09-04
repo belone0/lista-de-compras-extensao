@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app/shared/components/task_item.dart';
-import 'package:todo_app/shared/constants/constants.dart';
 import 'package:todo_app/shared/cubit/cubit.dart';
 import 'package:todo_app/shared/cubit/states.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
 
 class NewTasksScreen extends StatelessWidget {
   @override
@@ -28,7 +26,7 @@ class NewTasksScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 15),
                     child: Text(
-                      'Todo',
+                      'Lista de Compras',
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 35,
@@ -43,7 +41,7 @@ class NewTasksScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 18),
                     child: tasks.length > 0
                         ? Text(
-                            'New tasks',
+                            'Novos Itens',
                             style: TextStyle(
                               color: Colors.amber.shade700,
                               fontSize: 13,

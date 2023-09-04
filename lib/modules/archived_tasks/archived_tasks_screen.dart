@@ -41,7 +41,7 @@ class ArchivedTasksScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 18),
                     child: tasks.length > 0
                         ? Text(
-                            'Archived tasks',
+                            'Items Arquivados',
                             style: TextStyle(
                               color: Colors.amber.shade700,
                               fontSize: 13,

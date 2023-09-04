@@ -26,7 +26,7 @@ class DoneTasksScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 15),
                     child: Text(
-                      'Done',
+                      'Concluído',
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 35,
@@ -41,7 +41,7 @@ class DoneTasksScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 18),
                     child: tasks.length > 0
                         ? Text(
-                            'Done tasks',
+                            'Concluído',
                             style: TextStyle(
                               color: Colors.amber.shade700,
                               fontSize: 13,

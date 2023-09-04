@@ -1,12 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app/shared/cubit/states.dart';
-import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:todo_app/modules/new_tasks/new_tasks_screen.dart';
 import 'package:todo_app/modules/done_tasks/done_tasks_screen.dart';
 import 'package:todo_app/modules/archived_tasks/archived_tasks_screen.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:todo_app/shared/constants/constants.dart';
 
 class AppCubit extends Cubit<AppStates> {
   AppCubit() : super(AppInitialState());
@@ -60,7 +58,7 @@ class AppCubit extends Cubit<AppStates> {
                 //data string
                 //time string
                 //status string
-                'CREATE TABLE tasks (id INTEGER PRIMARY KEY, title TEXT, date TEXT, time TEXT, status TEXT)')
+                'CREATE TABLE tasks (id INTEGER PRIMARY KEY, title TEXT, status TEXT)')
             .then((value) => print('Table Created'))
             .catchError((error) {
           print('Error When Creating Table ${error.toString()}');
@@ -97,13 +95,11 @@ class AppCubit extends Cubit<AppStates> {
   }
 
   inserToDatabase(
-      {required String title,
-      required String time,
-      required String date}) async {
+      {required String title,}) async {
     await database!.transaction((txn) async {
       txn
           .rawInsert(
-              'INSERT INTO tasks (title, date, time, status) VALUES ("$title","$date","$time","New")')
+              'INSERT INTO tasks (title, status) VALUES ("$title","New")')
           .then((value) {
         getDataBase(database);
         print('$value Inserted Successfully');

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:todo_app/shared/constants/constants.dart';
@@ -11,8 +10,6 @@ class TaskItem extends StatelessWidget {
   final SlidableController slidableController = SlidableController();
   @override
   Widget build(BuildContext context) {
-    String date = tasks!['date'];
-    String time = tasks!['time'];
     return Padding(
       padding: const EdgeInsets.only(top: 3, bottom: 3),
       child: Slidable(
@@ -111,14 +108,6 @@ class TaskItem extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Deadline - $date',
-                              style: TextStyle(
-                                  color: Colors.red,
-                                  fontSize: 10,
-                                  fontFamily: 'NotoSans'),
-                            ),
-
-                            Text(
                               tasks!['title'],
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
@@ -140,10 +129,6 @@ class TaskItem extends StatelessWidget {
                             // )
                           ],
                         ),
-                      ),
-                      Text(
-                        time,
-                        style: TextStyle(fontSize: 11, color: Colors.white),
                       ),
                     ],
                   ),

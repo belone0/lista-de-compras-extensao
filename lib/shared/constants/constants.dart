@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 const kTextFieldDecoration = InputDecoration(
   filled: true,
   fillColor: Colors.white,
-  hintText: 'New Task',
+  hintText: 'Novo Item',
   hintStyle: TextStyle(color: Colors.grey),
   contentPadding: EdgeInsets.only(top: 25, bottom: 25, left: 20),
   enabledBorder: OutlineInputBorder(
