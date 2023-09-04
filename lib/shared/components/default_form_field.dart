@@ -31,6 +31,7 @@ class DefaultFormField extends StatelessWidget {
     this.type,
     this.validate,
   });
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(

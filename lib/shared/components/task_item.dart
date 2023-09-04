@@ -7,7 +7,9 @@ class TaskItem extends StatelessWidget {
   Map? tasks;
 
   TaskItem({this.tasks});
+
   final SlidableController slidableController = SlidableController();
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -141,6 +143,5 @@ class TaskItem extends StatelessWidget {
     );
   }
 }
-
 
 //AppCubit.get(context).deleteFromDatabase(tasks!['id']);

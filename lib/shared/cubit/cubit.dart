@@ -94,8 +94,9 @@ class AppCubit extends Cubit<AppStates> {
     });
   }
 
-  inserToDatabase(
-      {required String title,}) async {
+  inserToDatabase({
+    required String title,
+  }) async {
     await database!.transaction((txn) async {
       txn
           .rawInsert(
