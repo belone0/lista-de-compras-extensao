@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:todo_app/shared/constants/constants.dart';
-import 'package:todo_app/shared/cubit/cubit.dart';
+import 'package:lista_compras/shared/constants/constants.dart';
+import 'package:lista_compras/shared/cubit/cubit.dart';
 
 class TaskItem extends StatelessWidget {
   Map? tasks;
@@ -31,26 +31,15 @@ class TaskItem extends StatelessWidget {
         movementDuration: Duration(microseconds: 10),
         actionPane: SlidableScrollActionPane(),
         actions: [
-          IconSlideAction(
-            closeOnTap: true,
-            caption: 'Delete',
-            color: Colors.red,
-            icon: Icons.delete,
-            onTap: () {
-              AppCubit.get(context).deleteFromDatabase(tasks!['id']);
-            },
-          ),
           ClipRRect(
-            borderRadius: BorderRadius.only(
-                topRight: Radius.circular(15),
-                bottomRight: Radius.circular(15)),
+            borderRadius: BorderRadius.all(Radius.circular(15)),
             child: IconSlideAction(
               closeOnTap: true,
-              caption: 'Archive',
-              color: Colors.grey[800],
-              icon: Icons.archive,
+              caption: 'Delete',
+              color: Colors.red,
+              icon: Icons.delete,
               onTap: () {
-                AppCubit.get(context).updateDatabase('archived', tasks!['id']);
+                AppCubit.get(context).deleteFromDatabase(tasks!['id']);
               },
             ),
           ),
