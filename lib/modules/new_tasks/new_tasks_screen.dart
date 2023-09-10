@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:todo_app/shared/components/task_item.dart';
-import 'package:todo_app/shared/cubit/cubit.dart';
-import 'package:todo_app/shared/cubit/states.dart';
+import 'package:lista_compras/shared/components/task_item.dart';
+import 'package:lista_compras/shared/cubit/cubit.dart';
+import 'package:lista_compras/shared/cubit/states.dart';
 
 class NewTasksScreen extends StatelessWidget {
   @override

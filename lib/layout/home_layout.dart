@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:todo_app/shared/components/default_form_field.dart';
-import 'package:todo_app/shared/constants/constants.dart';
-import 'package:todo_app/shared/cubit/cubit.dart';
-import 'package:todo_app/shared/cubit/states.dart';
+import 'package:lista_compras/shared/components/default_form_field.dart';
+import 'package:lista_compras/shared/constants/constants.dart';
+import 'package:lista_compras/shared/cubit/cubit.dart';
+import 'package:lista_compras/shared/cubit/states.dart';
 
 var scaffoldKey = GlobalKey<ScaffoldState>();
 var titleController = TextEditingController();
@@ -162,30 +162,6 @@ class HomeLayout extends StatelessWidget {
                         true, Icon(Icons.add, color: Colors.amber[700]));
                   }
                 },
-              ),
-              bottomNavigationBar: Container(
-                decoration: BoxDecoration(
-                    border: Border(
-                        top: BorderSide(color: Colors.white10, width: 1))),
-                child: BottomNavigationBar(
-                    unselectedItemColor: Colors.grey,
-                    backgroundColor: Color(0x95171717),
-                    selectedItemColor: Colors.amber[700],
-                    currentIndex: cubit.bottomNavigtionIndex,
-                    onTap: (index) {
-                      cubit.changeIndex(index);
-                    },
-                    type: BottomNavigationBarType.fixed,
-                    items: [
-                      BottomNavigationBarItem(
-                          icon: Icon(Icons.menu), label: 'Itens'),
-                      BottomNavigationBarItem(
-                          icon: Icon(Icons.check_circle_outline),
-                          label: 'Done'),
-                      BottomNavigationBarItem(
-                          icon: Icon(Icons.archive_outlined),
-                          label: 'Archived'),
-                    ]),
               ),
             );
           }),

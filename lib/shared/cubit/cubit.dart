@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:todo_app/shared/cubit/states.dart';
+import 'package:lista_compras/shared/cubit/states.dart';
 import 'package:flutter/material.dart';
-import 'package:todo_app/modules/new_tasks/new_tasks_screen.dart';
-import 'package:todo_app/modules/done_tasks/done_tasks_screen.dart';
-import 'package:todo_app/modules/archived_tasks/archived_tasks_screen.dart';
+import 'package:lista_compras/modules/new_tasks/new_tasks_screen.dart';
+import 'package:lista_compras/modules/done_tasks/done_tasks_screen.dart';
+import 'package:lista_compras/modules/archived_tasks/archived_tasks_screen.dart';
 import 'package:sqflite/sqflite.dart';
 
 class AppCubit extends Cubit<AppStates> {
@@ -24,7 +24,7 @@ class AppCubit extends Cubit<AppStates> {
   Database? database;
   List<String> titles = ['Todo Tasks', 'Done Tasks', 'Archived Tasks'];
   bool isBottomSheetShown = false;
-  Icon floatingButtonIcon = Icon(Icons.edit);
+  Icon floatingButtonIcon = Icon(Icons.add);
 
   void changeIndex(int index) {
     bottomNavigtionIndex = index;

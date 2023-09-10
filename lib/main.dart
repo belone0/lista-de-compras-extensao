@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:todo_app/layout/home_layout.dart';
-import 'package:todo_app/shared/constants/constants.dart';
+import 'package:lista_compras/layout/home_layout.dart';
+import 'package:lista_compras/shared/constants/constants.dart';
 
 void main() {
   runApp(MyApp());
